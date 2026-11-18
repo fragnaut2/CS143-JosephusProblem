@@ -13,7 +13,7 @@ public class JosephusSim {
          Random rand = new Random();
          
          // make the ring circular by attaching last node's next to front
-         PersonNode first = null;
+         // PersonNode first = null;
          PersonNode previous = null;
 
          size = 0;
@@ -23,7 +23,7 @@ public class JosephusSim {
 
             PersonNode current = new PersonNode(line);
             if(previous == null){
-               first = current;
+               front = current;
             }
             else {
                previous.next = current;
@@ -63,12 +63,17 @@ public class JosephusSim {
    }
    
    public String toString() {
+      String output = "";
       int counter = 1;
       // if there's only one person left, print them as the last survivor
       
       // if many, print survivors (watch out for infinite loop since list is circular)
-
-      return "";
+      for(int i = 0 ; i < size; i++){
+         output += counter + "-" + front.name + ", ";
+         front = front.next;
+         counter++;
+      }
+      return output;
    }
 
 }
