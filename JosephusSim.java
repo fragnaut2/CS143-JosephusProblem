@@ -38,6 +38,7 @@ public class JosephusSim {
          
          // generate, print, and save the random elimination count
          eliminationCount = rand.nextInt(1, size / 2);
+         System.out.println("==Elimination Count is: " + eliminationCount + "==");
 
       } catch (FileNotFoundException e) {
          System.out.println("Something went wrong with " + fileName);
@@ -49,12 +50,23 @@ public class JosephusSim {
    }
    
    public void eliminate() {
+      System.out.println("COUNT: " + eliminationCount);
+      PersonNode prior = front;
+   
       // count to the elimination count
+      for(int i = 1; i < eliminationCount; i++){
+         if(i == eliminationCount - 1){
+            prior = front;
+         }
+         front = front.next;
+      }
+      
       
       // print who will be eliminated
-      
+      System.out.println(front.name + " HAS BEEN ELIMINATED!");
       // eliminate the person and update "front" of the circle and size
-
+      prior.next = prior.next.next;
+      size--;
    }
    
    public boolean isOver() {
