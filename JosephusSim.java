@@ -75,6 +75,9 @@ public class JosephusSim {
    
    public boolean isOver() {
       // check if there's only one person left in the circle
+      if (size == 1) {
+         return true; 
+      }
       return false;
    }
    
@@ -82,6 +85,11 @@ public class JosephusSim {
       String output = "";
       int counter = 1;
       // if there's only one person left, print them as the last survivor
+      if (size == 1) {
+         System.out.println();
+         System.out.println("*** " + front.name + " is the last survivor! ***");
+         return "";
+      }
       
       // if many, print survivors (watch out for infinite loop since list is circular)
       for(int i = 0 ; i < size; i++){
