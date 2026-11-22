@@ -52,13 +52,19 @@ public class JosephusSim {
    public void eliminate() {
       System.out.println("COUNT: " + eliminationCount);
       PersonNode prior = front;
-   
+      
+      // Ensures prior points to node before front to avoid elimination count 1 error
+      while (prior.next != front) {
+         prior = prior.next;
+      }
+      
       // count to the elimination count
       for(int i = 1; i < eliminationCount; i++){
          if(i == eliminationCount - 1){
             prior = front;
+            front = front.next;
          }
-         front = front.next;
+         
       }
       
       
