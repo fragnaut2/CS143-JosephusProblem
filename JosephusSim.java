@@ -59,12 +59,9 @@ public class JosephusSim {
       }
       
       // count to the elimination count
-      for(int i = 1; i < eliminationCount; i++){
-         if(i == eliminationCount - 1){
+      for(int i = 1; i < eliminationCount; i++){      
             prior = front;
-            front = front.next;
-         }
-         
+            front = front.next;       
       }
       
       
