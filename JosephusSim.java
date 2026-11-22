@@ -63,10 +63,10 @@ public class JosephusSim {
             prior = front;
             front = front.next;       
       }
-      
-      
+
       // print who will be eliminated
       System.out.println(front.name + " HAS BEEN ELIMINATED!");
+      
       // eliminate the person and update "front" of the circle and size
       front = front.next;
       prior.next = prior.next.next;
@@ -75,10 +75,8 @@ public class JosephusSim {
    
    public boolean isOver() {
       // check if there's only one person left in the circle
-      if (size == 1) {
-         return true; 
-      }
-      return false;
+
+      return size == 1;
    }
    
    public String toString() {
@@ -87,8 +85,7 @@ public class JosephusSim {
       // if there's only one person left, print them as the last survivor
       if (size == 1) {
          System.out.println();
-         System.out.println("*** " + front.name + " is the last survivor! ***");
-         return "";
+         return "*** " + front.name + " is the last survivor! ***";
       }
       
       // if many, print survivors (watch out for infinite loop since list is circular)
