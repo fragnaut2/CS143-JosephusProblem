@@ -50,7 +50,7 @@ public class JosephusSim {
    }
    
    public void eliminate() {
-      System.out.println("COUNT: " + eliminationCount);
+      // System.out.println("COUNT: " + eliminationCount);
       PersonNode prior = front;
       
       // Ensures prior points to node before front to avoid elimination count 1 error
@@ -65,7 +65,7 @@ public class JosephusSim {
       }
 
       // print who will be eliminated
-      System.out.println(front.name + " eliminated!");
+      System.out.println(front.name + " eliminated!\n");
       
       // eliminate the person and update "front" of the circle and size
       front = front.next;
