@@ -65,7 +65,7 @@ public class JosephusSim {
       }
 
       // print who will be eliminated
-      System.out.println(front.name + " HAS BEEN ELIMINATED!");
+      System.out.println(front.name + " eliminated!");
       
       // eliminate the person and update "front" of the circle and size
       front = front.next;
